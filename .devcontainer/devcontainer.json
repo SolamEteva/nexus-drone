@@ -1,0 +1,29 @@
+{
+    "name": "Nexus Drone JUCE Development",
+    "image": "mcr.microsoft.com/devcontainers/cpp:latest",
+    
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "version": "latest"
+        }
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools-extension-pack",
+                "juce.juce-tools" // Assuming a user might install this extension
+            ],
+            "settings": {
+                "cmake.configureOnOpen": true,
+                "cmake.generator": "Ninja"
+            }
+        }
+    },
+
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libx11-dev libxext-dev libxinerama-dev libxrandr-dev libxcursor-dev mesa-utils freeglut3-dev libasound-dev libjack-jackd2-dev && echo 'JUCE dependencies installed.'",
+
+    "remoteUser": "vscode"
+}
