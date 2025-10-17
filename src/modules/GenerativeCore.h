@@ -3,12 +3,7 @@
 #include "../core/NexusModule.h"
 #include "../core/Placeholders.h" // Includes JsonValue
 
-// Placeholder classes for internal components
-class MarkovChain {};
-class ControlledRandomWalk {
-public:
-    float nextMutation() { return 0.0f; }
-};
+#include "../core/GenerativeAlgorithms.h"
 class ParameterAutomation {
 public:
     std::vector<void*> getConnectedParameters() { return {}; }
@@ -19,8 +14,8 @@ public:
  */
 class GenerativeCore : public NexusModule {
 private:
-    MarkovChain patternGenerator;
-    ControlledRandomWalk evolutionEngine;
+    NexusGenerative::MarkovChain patternGenerator;
+    NexusGenerative::ControlledRandomWalk evolutionEngine;
     ParameterAutomation automationSystem;
     
 public:

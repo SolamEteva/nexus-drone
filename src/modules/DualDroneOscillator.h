@@ -2,11 +2,12 @@
 
 #include "../core/NexusModule.h"
 #include "../core/Placeholders.h" // Includes JsonValue
+#include "../core/DSPUtilities.h"
 
 // Placeholder classes for internal components
-class MorphingOscillator {};
+class MorphingOscillator : public NexusDSP::SimpleOscillator {};
 class CrossModulationMatrix {};
-class AnalogModeledSubOsc {};
+class AnalogModeledSubOsc : public NexusDSP::SimpleOscillator {};
 class WaveformMorpher {
 public:
     void interpolate(MorphingOscillator& osc1, MorphingOscillator& osc2, float position) {
