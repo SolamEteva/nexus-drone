@@ -17,7 +17,8 @@ set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 # Core Source Files
 set(CORE_SOURCES
     ${SOURCE_DIR}/core/NexusModule.cpp
-    # Add other core files here
+    ${SOURCE_DIR}/core/DSPUtilities.cpp
+    ${SOURCE_DIR}/core/GenerativeAlgorithms.cpp
 )
 
 # Module Source Files
